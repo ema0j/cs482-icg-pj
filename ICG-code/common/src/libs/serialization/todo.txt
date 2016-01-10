@@ -1,0 +1,10 @@
+Serialization:
+	- move serialization in common
+	- serialization library
+		- builtin types
+			- carray2<T>
+		- loading images via callbacks to the serializer?
+		- backends
+			- xml
+				- include file support (implement this as inlining)
+	- change scene graph to support new serialization

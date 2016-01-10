@@ -1,0 +1,8 @@
+### CS482 Project by Hangyul Park, Eunah Jung ###
+- Improving matrix row-column sampling for the many-light problem
+- Method 1. Matrix slicing
+- Method 2. Cascade clustering
+- Method 3. Lightgroup clustering
+
+- How to run 
+Build according to 'readme.txt' in ICG-code folder

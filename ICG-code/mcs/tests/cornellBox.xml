@@ -1,0 +1,311 @@
+<scene type="Scene">
+  <mainCamera type="Camera">
+    <xform type="XformStaticLookAt">
+      <eye>0 4 -12</eye>
+      <target>0 4 0</target>
+      <up>0 1 0</up>
+	  <flipz>true</flipz>
+    </xform>
+    <lens type="PinholeLens">
+      <fovDegree>25 25</fovDegree>
+    </lens>
+  </mainCamera>
+
+    <texture type="Texture" id="texture">
+    <filename>textures/uvchecker.jpg</filename>
+  </texture>
+  
+  <material type="LambertMaterial" id="mbox_white">
+		<rd>0.5 0.5 0.5</rd>
+	</material>
+  <material type="LambertMaterial" id="mbox_red">
+    <rd>0.5 0.2 0.2</rd>
+  </material>
+  <material type="LambertMaterial" id="mbox_green">
+    <rd>0.2 0.5 0.2</rd>
+  </material>
+  <material type="LambertMaterial" id="msphere">
+		<rd>0.5 0.5 0.5</rd>
+  </material>
+    <!--<material type="TexturedLambertMaterial" id="mmapped">
+		<rd>1 1 1</rd>
+		<rdTxt  ref="texture"/>
+  </material>-->
+  
+  <light type="Light">
+    <xform type="XformStaticLookAt">
+      <eye>0 7.99 0</eye>
+      <target>0 0 0</target>
+      <up>0 0 1</up>
+	  <flipz>false</flipz>
+    </xform>
+    <source type="QuadAreaSource">
+      <size>1</size>
+      <Le>160 160 160</Le>
+      <shadowSamples>256</shadowSamples>
+    </source>
+  </light>
+
+  <!-- geometry 
+	<surface>
+		<shape type="SphereShape">
+			<pos>0 2 0</pos>
+			<radius>2</radius>
+		</shape>
+		<material ref="msphere"/>
+	</surface>
+  <surface>
+    <shape type="SphereShape">
+      <pos>0 5 0</pos>
+      <radius>1</radius>
+    </shape>
+    <material ref="msphere"/>
+  </surface>
+  -->
+
+  <!-- Box 1 -->
+  <!-- Box Up -->
+  <surface>
+    <shape type="MeshShape">
+      <pos>
+        0.2  2.41 -2.37
+        -2.12  2.41 -3.07
+        -2.8  2.41 -0.78
+        -0.52  2.41 -0.11      
+      </pos>
+      <triangles>
+        0 1 2
+        0 2 3
+      </triangles>
+    </shape>
+    <material ref="mbox_white"/>    
+  </surface>
+  <!-- Box Back -->
+  <surface>
+    <shape type="MeshShape">
+      <pos>
+        -0.52  0 -0.11
+        -0.52  2.41 -0.11
+        -2.8  2.41 -0.78
+        -2.8  0 -0.78      
+      </pos>
+      <triangles>
+        0 1 2
+        0 2 3
+      </triangles>
+    </shape>
+    <material ref="mbox_white"/>    
+  </surface>
+  <!-- Box Left -->
+  <surface>
+    <shape type="MeshShape">
+      <pos>
+        0.2  0 -2.37
+        0.2  2.41 -2.37
+        -0.52  2.41 -0.11
+        -0.52  0 -0.11      
+      </pos>
+      <triangles>
+        0 1 2
+        0 2 3
+      </triangles>
+    </shape>
+    <material ref="mbox_white"/>    
+  </surface>
+  <!-- Box Right -->
+  <surface>
+    <shape type="MeshShape">
+      <pos>
+        -2.8 0 -0.78
+        -2.8 2.41 -0.78
+        -2.12 2.41 -3.07
+        -2.12 0 -3.07  
+      </pos>
+      <triangles>
+        0 1 2
+        0 2 3
+      </triangles>
+    </shape>
+    <material ref="mbox_white"/>    
+  </surface>
+  <!-- Box Front -->
+  <surface>
+    <shape type="MeshShape">
+      <pos>
+        0.2 0 -2.37
+        -2.12 0 -3.07
+        -2.12 2.41 -3.07
+        0.2 2.41 -2.37      
+      </pos>
+      <triangles>
+        0 1 2
+        0 2 3
+      </triangles>
+    </shape>
+    <material ref="mbox_white"/>    
+  </surface>
+
+  <!-- Box 2 -->
+  <!-- Box Up -->
+  <surface>
+    <shape type="MeshShape">
+      <pos>
+        2.13  4.8 -0.47
+        -0.16  4.8 0.24
+        0.55  4.8 2.52
+        2.8 4.8 1.8      
+      </pos>
+      <triangles>
+        0 1 2
+        0 2 3
+      </triangles>
+    </shape>
+    <material ref="mbox_white"/>    
+  </surface>
+  <!-- Box Back -->
+  <surface>
+    <shape type="MeshShape">
+      <pos>
+        2.8 0 1.8
+        2.8 4.8 1.8
+        0.55 4.8 2.52
+        0.55 0 2.52     
+      </pos>
+      <triangles>
+        0 1 2
+        0 2 3
+      </triangles>
+    </shape>
+    <material ref="mbox_white"/>    
+  </surface>
+  <!-- Box Left -->
+  <surface>
+    <shape type="MeshShape">
+      <pos>
+        2.13  0 -0.47
+        2.13  4.8 -0.47
+        2.8  4.8 1.8
+        2.8  0 1.8      
+      </pos>
+      <triangles>
+        0 1 2
+        0 2 3
+      </triangles>
+    </shape>
+    <material ref="mbox_white"/>    
+  </surface>
+  <!-- Box Right -->
+  <surface>
+    <shape type="MeshShape">
+      <pos>
+        0.55  0 2.52
+        0.55 4.8 2.52
+        -0.16 4.8 0.24
+        -0.16 0 0.24
+      </pos>
+      <triangles>
+        0 1 2
+        0 2 3
+      </triangles>
+    </shape>
+    <material ref="mbox_white"/>    
+  </surface>
+  <!-- Box Front -->
+  <surface>
+    <shape type="MeshShape">
+      <pos>
+        2.13 0 -0.47
+        -0.16 0 0.24
+        -0.16 4.8 0.24 
+        2.13 4.8 -0.47     
+      </pos>
+      <triangles>
+        0 1 2
+        0 2 3
+      </triangles>
+    </shape>
+    <material ref="mbox_white"/>    
+  </surface>
+
+	<surface>
+		<shape type="MeshShape">
+			<pos>
+				-4  0 -4
+				-4  0  4
+				 4  0  4
+				 4  0 -4			
+			</pos>
+			<triangles>
+				0 1 2
+				0 2 3
+			</triangles>
+		</shape>
+		<material ref="mbox_white"/>		
+	</surface>
+  <surface>
+    <shape type="MeshShape">
+      <pos>
+        -4  8 -4
+        -4  8  4
+        4  8  4
+        4  8 -4
+      </pos>
+      <triangles>
+        0 2 1
+        0 3 2
+      </triangles>
+    </shape>
+    <material ref="mbox_white"/>
+  </surface>
+  <surface>
+    <shape type="MeshShape">
+      <pos>
+        -4  0 -4
+        -4  0  4
+        -4  8  4
+        -4  8 -4
+      </pos>
+      <triangles>
+        0 2 1
+        0 3 2
+      </triangles>
+    </shape>
+    <material ref="mbox_green"/>
+  </surface>
+  <surface>
+    <shape type="MeshShape">
+      <pos>
+        4  0 -4
+        4  0  4
+        4  8  4
+        4  8 -4
+      </pos>
+      <triangles>
+        0 1 2
+        0 2 3
+      </triangles>
+    </shape>
+    <material ref="mbox_red"/>
+  </surface>
+  <surface>
+    <shape type="MeshShape">
+      <pos>
+        -4  0  4
+        -4  8  4
+        4  8  4
+        4  0  4
+      </pos>
+      <triangles>
+        0 1 2
+        0 2 3
+      </triangles>
+		<uv>
+      0 0
+      0 1
+      1 1
+      1 0
+		</uv>
+    </shape>
+    <material ref="mbox_white"/>
+  </surface>
+</scene>

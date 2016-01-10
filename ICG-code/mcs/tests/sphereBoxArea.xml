@@ -1,0 +1,138 @@
+<scene type="Scene">
+  <mainCamera type="Camera">
+    <xform type="XformStaticLookAt">
+      <eye>0 4 -12</eye>
+      <target>0 4 0</target>
+      <up>0 1 0</up>
+	  <flipz>true</flipz>
+    </xform>
+    <lens type="PinholeLens">
+      <fovDegree>25 25</fovDegree>
+    </lens>
+  </mainCamera>
+
+    <texture type="Texture" id="texture">
+    <filename>textures/uvchecker.jpg</filename>
+  </texture>
+  
+  <material type="LambertMaterial" id="mbox_white">
+		<rd>0.5 0.5 0.5</rd>
+	</material>
+  <material type="LambertMaterial" id="mbox_red">
+    <rd>0.5 0.2 0.2</rd>
+  </material>
+  <material type="LambertMaterial" id="mbox_green">
+    <rd>0.2 0.5 0.2</rd>
+  </material>
+  <material type="LambertMaterial" id="msphere">
+		<rd>0.5 0.5 0.5</rd>
+  </material>
+    <!--<material type="TexturedLambertMaterial" id="mmapped">
+		<rd>1 1 1</rd>
+		<rdTxt  ref="texture"/>
+  </material>-->
+  
+  <light type="Light">
+    <xform type="XformStaticLookAt">
+      <eye>0 7.99 0</eye>
+      <target>0 0 0</target>
+      <up>0 0 1</up>
+	  <flipz>false</flipz>
+    </xform>
+    <source type="QuadAreaSource">
+      <size>1</size>
+      <Le>160 160 160</Le>
+      <shadowSamples>256</shadowSamples>
+    </source>
+  </light>
+
+  <!-- geometry -->
+	<surface>
+		<shape type="SphereShape">
+			<pos>0 2 0</pos>
+			<radius>2</radius>
+		</shape>
+		<material ref="msphere"/>
+	</surface>
+	<surface>
+		<shape type="MeshShape">
+			<pos>
+				-4  0 -4
+				-4  0  4
+				 4  0  4
+				 4  0 -4			
+			</pos>
+			<triangles>
+				0 1 2
+				0 2 3
+			</triangles>
+		</shape>
+		<material ref="mbox_white"/>		
+	</surface>
+  <surface>
+    <shape type="MeshShape">
+      <pos>
+        -4  8 -4
+        -4  8  4
+        4  8  4
+        4  8 -4
+      </pos>
+      <triangles>
+        0 2 1
+        0 3 2
+      </triangles>
+    </shape>
+    <material ref="mbox_white"/>
+  </surface>
+  <surface>
+    <shape type="MeshShape">
+      <pos>
+        -4  0 -4
+        -4  0  4
+        -4  8  4
+        -4  8 -4
+      </pos>
+      <triangles>
+        0 2 1
+        0 3 2
+      </triangles>
+    </shape>
+    <material ref="mbox_green"/>
+  </surface>
+  <surface>
+    <shape type="MeshShape">
+      <pos>
+        4  0 -4
+        4  0  4
+        4  8  4
+        4  8 -4
+      </pos>
+      <triangles>
+        0 1 2
+        0 2 3
+      </triangles>
+    </shape>
+    <material ref="mbox_red"/>
+  </surface>
+  <surface>
+    <shape type="MeshShape">
+      <pos>
+        -4  0  4
+        -4  8  4
+        4  8  4
+        4  0  4
+      </pos>
+      <triangles>
+        0 1 2
+        0 2 3
+      </triangles>
+		<uv>
+      0 0
+      0 1
+      1 1
+      1 0
+		</uv>
+    </shape>
+    <material ref="mbox_white"/>
+  </surface>
+</scene>
